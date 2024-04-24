@@ -2,7 +2,6 @@
 include_once('koneksi.php');
 
 // tangkap data dari form
-$id = $_GET['id'];
 $nama = $_POST['nama'];
 $kode = $_POST['kode'];
 $email = $_POST['email'];
@@ -13,7 +12,7 @@ $kelurahan_id = $_POST['kelurahan_id'];
 $alamat = $_POST['alamat'];
 
 // buat query insert
-$query = "UPDATE pasien SET nama='$nama', kode='$kode', email='$email', tgl_lahir='$tgl_lahir', tmp_lahir='$tmp_lahir', gender='$gender', alamat='$alamat', kelurahan_id= '$kelurahan_id' WHERE id=$id";
+$query = "INSERT INTO pasien (nama, kode, email, tgl_lahir, tmp_lahir, gender, kelurahan_id, alamat) VALUES ('$nama', '$kode', '$email', '$tgl_lahir', '$tmp_lahir', '$gender', '$kelurahan_id', '$alamat')";
 
 // eksekusi query
 if ($dbh->query($query)) {
